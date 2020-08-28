@@ -80,7 +80,7 @@ class Profile extends Component {
     } else {
       if (profile) {
         OneProfile = (
-          <div className="text-center">
+          <div className="text-center mt-5">
             <h1 className=" display-4 ">
               <img
                 src={profile.avatar}
@@ -97,26 +97,28 @@ class Profile extends Component {
               <p style={{ color: "red" }}>{this.state.error}</p>
             )}
             <p>
-              <FormGroup>
-                <Input
-                  style={{ width: "25%" }}
-                  type="date"
-                  name="date"
-                  id="date"
-                  onChange={this.onChange.bind(this)}
-                  placeholder="date placeholder"
-                />
-              </FormGroup>
-              <FormGroup>
-                <Input
-                  style={{ width: "25%" }}
-                  type="time"
-                  name="time"
-                  id="time"
-                  onChange={this.onChange.bind(this)}
-                  placehold="time"
-                />
-              </FormGroup>
+              <center>
+                <FormGroup>
+                  <Input
+                    style={{ width: "25%" }}
+                    type="date"
+                    name="date"
+                    id="date"
+                    onChange={this.onChange.bind(this)}
+                    placeholder="date placeholder"
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Input
+                    style={{ width: "25%" }}
+                    type="time"
+                    name="time"
+                    id="time"
+                    onChange={this.onChange.bind(this)}
+                    placehold="time"
+                  />
+                </FormGroup>
+              </center>
             </p>
             <p>
               <Button

@@ -5,3 +5,13 @@
 2. Run Server & client - npm run dev
 
 #### Website Live at - https://indy-wise-task.herokuapp.com/
+
+## For Testing
+
+1. jest
+2. flow-bin - Static Type Checker for Javascript
+   npm i -D flow-bin
+   npm run flow init
+   // @flow
+   npm run flow
+3. Eslint - Extension
