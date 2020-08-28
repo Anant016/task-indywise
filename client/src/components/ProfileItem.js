@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "reactstrap";
+
 import axios from "axios";
 class ProfileItem extends Component {
   state = {
@@ -8,31 +8,9 @@ class ProfileItem extends Component {
   };
   constructor(props) {
     super(props);
-    this.book = this.book.bind(this);
   }
-  componentDidMount() {
-    let ob = {
-      id: this.props.profile.id,
-    };
-    axios.post("/users/find", ob).then((data) => {
-      if (data && data.data.length > 0) {
-        this.setState({ booked: data.data[0].booked });
-      }
-    });
-  }
+  componentDidMount() {}
 
-  book = (id, booked) => {
-    let ob = {
-      id: id,
-      booked: booked,
-    };
-    // this.setState({ booked: !this.state.booked });
-    axios.post("/users/toggle", ob).then((data) => {
-      if (data) {
-        this.setState({ booked: data.data.booked });
-      }
-    });
-  };
   render() {
     const { profile } = this.props;
     return (
@@ -51,12 +29,18 @@ class ProfileItem extends Component {
             </h3>
             <p>{profile.email}</p>
 
-            <Button
-              onClick={() => this.book(profile.id, this.state.booked)}
+            <Link
+              to={{
+                pathname: `/profile/${profile.id}`,
+                state: {
+                  profile: profile,
+                },
+              }}
+              profile={profile}
               className="btn btn-info"
             >
-              {this.state.booked ? "Click to cancel" : "Click to Book"}
-            </Button>
+              View Profile
+            </Link>
           </div>
         </div>
       </div>

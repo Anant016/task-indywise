@@ -16,13 +16,20 @@ router.post("/toggle", (req, res) => {
       let newUser = User({
         id: req.body.id,
         booked: !req.body.booked,
+        date: req.body.date,
+        time: req.body.time,
       });
       newUser.save().then(res.send(newUser));
     } else {
       //update
       User.findOneAndUpdate(
         { id: req.body.id },
-        { id: req.body.id, booked: !req.body.booked },
+        {
+          id: req.body.id,
+          booked: !req.body.booked,
+          date: req.body.date,
+          time: req.body.time,
+        },
         { upsert: true },
         function (err, doc) {
           if (err) return res.send(500, { error: err });

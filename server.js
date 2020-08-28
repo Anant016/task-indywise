@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const path = require("path");
 
-//routes
+// routes
 const users = require("./routes/users");
 
 // middlewares
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-//database
+// database
 const mongoose = require("mongoose");
 mongoose
   .connect("mongodb://anu:anu123@ds247377.mlab.com:47377/prof", {
@@ -24,11 +24,11 @@ mongoose
   .then(console.log("MongoDbConnected"))
   .catch((err) => console.log(err));
 
-//using routes
+// using routes
 app.use("/users", users);
 
 if (process.env.NODE_ENV === "production") {
-  // Set static folder
+  // set static folder
   app.use(express.static("client/build"));
 
   app.get("*", (req, res) => {

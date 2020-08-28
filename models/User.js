@@ -6,6 +6,14 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
+  date: {
+    type: String,
+    required: true,
+  },
+  time: {
+    type: String,
+    required: true,
+  },
   booked: {
     type: Boolean,
     default: 0,
