@@ -1,0 +1,12 @@
+#check:hover {
+  color: cornflowerblue;
+}
+
+.zoom {
+  transform: transform 0.2s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
