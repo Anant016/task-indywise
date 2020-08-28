@@ -19,6 +19,7 @@ const mongoose = require("mongoose");
 mongoose
   .connect("mongodb://anu:anu123@ds247377.mlab.com:47377/prof", {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(console.log("MongoDbConnected"))
   .catch((err) => console.log(err));
