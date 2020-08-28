@@ -11,15 +11,15 @@
     "react-moment": "^0.8.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.0",
-    "react-test-renderer": "^16.13.1",
     "reactstrap": "^8.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "flow": "flow"
+    "test": "react-scripts test",
+    "flow": "flow",
+    "coverage": "npm run test -- --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "flow-bin": "^0.132.0"
+    "flow-bin": "^0.132.0",
+    "react-test-renderer": "^16.13.1"
   }
 }
