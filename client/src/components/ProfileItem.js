@@ -9,7 +9,6 @@ class ProfileItem extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {}
 
   render() {
     const { profile } = this.props;

@@ -6,6 +6,26 @@
 
 #### Website Live at - https://indy-wise-task.herokuapp.com/
 
+## React Components
+
+1. Profiles
+   Route - '/'
+   Gives a list of users fetched from reqres.in
+
+2. ProfileItem
+   Profiles uses ProfileItem to render each user
+
+3. Profile
+   Route -'/profile/:id'
+   Gives one single profile.
+   Here we've option to book the user with a particular date and time.
+   We've option to cancel booking
+
+### Future Tasks
+
+1. Create Login to do the booking
+2. Check Function if user is already booked at that time
+
 ## For Testing
 
 1. jest

@@ -7,7 +7,6 @@ import Profiles from "./components/Profiles";
 import Profile from "./components/Profile";
 
 class App extends Component {
-  // class App {
   render() {
     return (
       <Router>

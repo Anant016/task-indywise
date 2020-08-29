@@ -39,12 +39,13 @@ class Profile extends Component {
       });
   }
 
+  // handles onChange for Input
   onChange(e) {
     let name = e.target.name;
     this.setState({ [name]: e.target.value });
   }
 
-  // to book
+  // Handle Button to book or cancel booking
   book = (id, booked) => {
     this.setState({ error: "" });
     console.log(this.state.date);
@@ -72,6 +73,7 @@ class Profile extends Component {
       });
     }
   };
+
   render() {
     let profile = this.state.profile;
     let OneProfile;
@@ -97,28 +99,32 @@ class Profile extends Component {
               <p style={{ color: "red" }}>{this.state.error}</p>
             )}
             <p>
-              <center>
-                <FormGroup>
-                  <Input
-                    style={{ width: "25%" }}
-                    type="date"
-                    name="date"
-                    id="date"
-                    onChange={this.onChange.bind(this)}
-                    placeholder="date placeholder"
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Input
-                    style={{ width: "25%" }}
-                    type="time"
-                    name="time"
-                    id="time"
-                    onChange={this.onChange.bind(this)}
-                    placehold="time"
-                  />
-                </FormGroup>
-              </center>
+              {!this.state.booked ? (
+                <center>
+                  <FormGroup>
+                    <Input
+                      style={{ width: "25%" }}
+                      type="date"
+                      name="date"
+                      id="date"
+                      onChange={this.onChange.bind(this)}
+                      placeholder="date placeholder"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Input
+                      style={{ width: "25%" }}
+                      type="time"
+                      name="time"
+                      id="time"
+                      onChange={this.onChange.bind(this)}
+                      placehold="time"
+                    />
+                  </FormGroup>
+                </center>
+              ) : (
+                <span></span>
+              )}
             </p>
             <p>
               <Button
